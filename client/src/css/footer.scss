@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    height: 6rem;
+    align-items: center;
+    border-bottom: 1px solid #393939;
+    background-color: rgb(36 104 232);
+    width: 100%;
+    justify-content: center;
+}
+
+.footer-title {
+    color: #f6f7f8;
+    font-size: 1rem;
+    font-weight: bold;
+}
