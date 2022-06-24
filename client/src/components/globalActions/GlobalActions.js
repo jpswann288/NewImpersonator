@@ -10,11 +10,6 @@ export function searchRepos(owner) {
 	return function (dispatch) {
         dispatch(RETURN_STATUS({status: true}))
 		let url = `/api/getRepo/${owner}`
-        // let url = `https://api.github.com/repositories`
-        // if(owner.length) {
-        //     url = `https://api.github.com/users/${owner}/repos`
-        // }
-
 		axios
 			.get(url)
 			.then(function (response) {
@@ -34,19 +29,11 @@ export function searchRepos(owner) {
 
 export function getRepoLanguage(url) {
 	return async function (dispatch) {
+		let params = {url: url}
 		return await axios
-			.get(url)
+			.post(`/api/getRepoLanguage`, params)
 			.then(function (response) {
-				let data = response.data
-                let languages = []
-                if(data && Object.keys(data)) {
-                    for(let key of Object.keys(data)) {
-                        languages.push(key)
-                    }
-                } else {
-                    languages.push('N/A')
-                }
-				return languages
+				return response.data
 			})
 			.catch(function (error) {
 				console.log(error)
@@ -59,8 +46,7 @@ export function getRepoStars(url) {
 		return await axios
 			.get(url)
 			.then(function (response) {
-				let data = response.data
-				return data
+				return response.data
 			})
 			.catch(function (error) {
 				console.log(error)

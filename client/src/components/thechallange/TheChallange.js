@@ -121,7 +121,7 @@ class TheChallange extends React.Component {
 
   async getLanguage(url) {
     let language = await this.props.dispatch(getRepoLanguage(url));
-    if(language) {
+    if(language && language.length) {
       return language.join(",");
     } else {
       return []
@@ -442,7 +442,7 @@ clearModal() {
         <br />
         <div className="bx--row">
           <div className="bx--col-lg-4">
-            <FormLabel>Search GitHub Repository(s) by Owner</FormLabel>
+            <FormLabel>Search GitHub Repository(s) by Owner (Ex: 'jpswann288')</FormLabel>
             <Search
               id="searchGit"
               labelText="Owner"
