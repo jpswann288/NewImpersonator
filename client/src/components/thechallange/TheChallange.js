@@ -481,13 +481,13 @@ clearModal() {
         <br />
         <div className="bx--row">
           <div className="bx--col-lg-8">
-            <h1>Create Repoistory</h1>
+            <h1>Create Repository</h1>
           </div>
         </div>
         <br />
         <br />
         <Accordion id="RESULTS">
-          <AccordionItem title="Create Repoistory" open={true}>
+          <AccordionItem title="Create Repository" open={true}>
             <div className="bx--row">
               <div className="bx--col-lg-6">
                 <TextInput
