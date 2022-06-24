@@ -9,10 +9,11 @@ export const RETURN_STATUS = createAction("RETURN_STATUS")
 export function searchRepos(owner) {
 	return function (dispatch) {
         dispatch(RETURN_STATUS({status: true}))
-        let url = `https://api.github.com/repositories`
-        if(owner.length) {
-            url = `https://api.github.com/users/${owner}/repos`
-        }
+		let url = `/api/getRepo/${owner}`
+        // let url = `https://api.github.com/repositories`
+        // if(owner.length) {
+        //     url = `https://api.github.com/users/${owner}/repos`
+        // }
 
 		axios
 			.get(url)
